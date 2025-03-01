@@ -1,0 +1,16 @@
+/* src/components/SareeCarousel.css */
+.carousel-slide {
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Adjust the maximum height as needed */
+    object-fit: contain;
+  }
+  .slick-track {
+    flex-direction: column !important;
+  }
+  
