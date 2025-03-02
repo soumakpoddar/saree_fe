@@ -1,16 +1,75 @@
-/* src/components/SareeCarousel.css */
+.carousel-container {
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .carousel-container {
+    width: 800px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .carousel-container {
+    width: 600px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .carousel-container {
+    width: 300px;
+  }
+}
+
 .carousel-slide {
-    text-align: center;
-    flex-direction: column;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* Adjust the maximum height as needed */
-    object-fit: contain;
-  }
-  .slick-track {
-    flex-direction: column !important;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+/* ARROWS */
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-prev {
+  left: -25px; /* Half of 50px outside the container */
+}
+
+.slick-next {
+  right: -25px; /* Half of 50px outside the container */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px;
+  color: black;
+  content: '';
+}
+
+/* Unicode Arrows */
+.slick-prev:before {
+  content: '\2190'; /* Left arrow */
+}
+
+.slick-next:before {
+  content: '\2192'; /* Right arrow */
+}

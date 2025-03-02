@@ -1,7 +1,5 @@
-// src/components/SareeCarousel.js
 import React from 'react';
 import Slider from "react-slick";
-import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -14,21 +12,20 @@ const SareeCarousel = ({ images }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: false,
     arrows: true,
-    vertical: false,
-    verticalSwiping: false,
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((img, index) => (
-        <div key={index} className="carousel-slide">
-          <Zoom>
-            <img src={img} alt={`Saree slide ${index + 1}`} className="carousel-image" />
-          </Zoom>
-        </div>
-      ))}
-    </Slider>
+    <div className="carousel-container">
+      <Slider {...settings}>
+        {images.map((src, index) => (
+          <div key={index} className="carousel-slide">
+            <img src={src} alt={`Slide ${index + 1}`} className="carousel-image" />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

@@ -38,7 +38,7 @@ const SareeDetails = () => {
       <Navbar />
       <div className="saree-details-container">
         <div className="saree-details-image">
-          {saree.images && saree.images.length > 1 ? (
+          {saree.images && saree.images.length > 0 ? (
             <SareeCarousel images={saree.images} />
           ) : (
             <img src={saree.homeImage} alt={saree.name} />
@@ -48,12 +48,14 @@ const SareeDetails = () => {
           <h1>{saree.name}</h1>
           <p className="saree-price">Price: ₹{saree.price}</p>
           <p className="saree-description">{saree.description}</p>
-          {!showForm && (
-            <button className="request-button" onClick={handleRequestClick}>
-              Request to Buy
-            </button>
-          )}
-          {showForm && <PurchaseForm onSubmit={handleSubmit} />}
+          <div className="button-container">
+            {!showForm && (
+              <button className="request-button" onClick={handleRequestClick}>
+                Request to Buy
+              </button>
+            )}
+            {showForm && <PurchaseForm onSubmit={handleSubmit} />}
+          </div>
         </div>
       </div>
     </>
